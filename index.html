@@ -4,26 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <link rel="icon" href="img/24_-Yoda-_Yellow-512.png" class="icon">
+    <title>STAR WARS Library</title>
 </head>
-<body>  
+<body class="stars">  
 
     <div class="logo-image">
-        <img src="img/logo.png" alt="star-wars logo">
+        <img src="img/logo.png" alt="star-wars logo" class="unselectable">
     </div>
     
     <div class="loader-images">
-        <a href="#" id="people"><img src="img/cosmonaut.svg" alt="space guy"></a>
-        <a href="#" id="ships"><img src="img/rocket.svg" alt="space ship"></a>
+        <a href="#" id="people"><img src="img/rey.jpg" alt="space guy" class="unselectable"></a>
+        <a href="#" id="ships"><img src="img/ship.png" alt="space ship" class="unselectable"></a>
+    </div>
+
+    <div class="search-div absolute">
+        <input type="text" placeholder="Search by name" id="search-name" class="search hidden" spellcheck="false">
     </div>
 
     <div class="navigation-container absolute">
-        <a href="#" id="left-btn" class="hidden"><<<</a>
-        <a href="#" id="right-btn" class="hidden">>>></a>
+        <a href="#" id="left-btn" class="hidden unselectable links"><<<</a>
+        <h1 id="paginate" class="unselectable"></h1>
+        <a href="#" id="right-btn" class="hidden unselectable links">>>></a>
     </div>
 
     <div class="table-container absolute">
         <table id="tbl"></table>
+    </div>
+
+    <div class="loader-div">
+        <img src="img/loader.gif" alt="loading" id="loader" class="hidden">
     </div>
 
     <script src="script.js"></script>
