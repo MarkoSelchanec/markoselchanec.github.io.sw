@@ -346,6 +346,7 @@ searchName.addEventListener("keyup", function(e) {
 
 async function fillArr(link, array) {
     let a = 0;
+    let b = 2;
     const res = await fetch(link);
     const data = await res.json();
     let arr = [];
@@ -353,20 +354,23 @@ async function fillArr(link, array) {
         arr.push(e)
     });
     array[a] = arr;
-    let next = data.next
     while (array.length < data.count / 10) {
-        const res2 = await fetch(next);
+        const res2 = await fetch(link + `/?page=${b}`);
         const data2 = await res2.json();
         arr = [];
         data2.results.forEach(e => {
            arr.push(e)
         });
-        next = data2.next
         a++;
+        b++;
         array[a] = arr;
     }
 };
 
 fillArr(people, peopleArray)
 fillArr(ships, shipsArray)
+console.log(peopleArray)
+console.log(shipsArray)
 //#endregion
+
+
