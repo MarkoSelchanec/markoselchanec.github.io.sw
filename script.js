@@ -354,18 +354,18 @@ async function fillArr(link, array) {
         arr.push(e)
     });
     array[a] = arr;
-    while (array.length < data.count / 10) {
-        const res2 = await fetch(link + `/?page=${b}`);
-        console.log(link + `/?page=${b}`)
-        const data2 = await res2.json();
-        arr = [];
-        data2.results.forEach(e => {
-           arr.push(e)
-        });
-        a++;
-        b++;
-        array[a] = arr;
-    }
+    // while (array.length < data.count / 10) {
+    //     const res2 = await fetch(link + `/?page=${b}`);
+    //     console.log(link + `/?page=${b}`)
+    //     const data2 = await res2.json();
+    //     arr = [];
+    //     data2.results.forEach(e => {
+    //        arr.push(e)
+    //     });
+    //     a++;
+    //     b++;
+    //     array[a] = arr;
+    // }
 };
 
 fillArr(people, peopleArray)
